@@ -3,53 +3,65 @@
     height: 25%;
     border: solid 1vmin #000;
 }
+
+@MediaWidth: 90%;
+
 .box {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1%;
-    flex-direction:row;
+    flex-direction: row;
     width: 90%;
     height: 40%;
     border: solid 2vmin #000;
-}
-.button_red {
-    .button ();
-    background-color: rgba(151, 10, 10, 0.753);
-}
-.button_orange {
-    .button ();
-    background-color: rgba(197, 111, 14, 0.753);
-}
-.button_yellow {
-    .button ();
-    background-color: rgba(207, 187, 6, 0.753);
-}
 
-@media (max-width:1200px) {
-    .box {
-        gap:5vmin;
+    @media (max-width:800px) {
+        height: 60%;
+        gap: 2vmin;
+        flex-direction: column;
+    }
+
+    @media (max-width:1200px) {
+        gap: 5vmin;
         height: 60%;
         width: 70%;
     }
-    .button_yellow{
-        width: 90%;
+
+    .button_red {
+        .button ();
+        background-color: rgba(151, 10, 10, 0.753);
+
+        @media (max-width:800px) {
+            width: @MediaWidth;
+        }
+        @media (max-width:1200px) {
+            width: 45%;
+        }
     }
-}
-@media (max-width:800px) {
-    .box {
-        height: 60%;
-        gap:2vmin;
-        flex-direction: column;
+
+    .button_orange {
+        .button ();
+        background-color: rgba(197, 111, 14, 0.753);
+
+        @media (max-width:800px) {
+            width: @MediaWidth;
+        }
+        @media (max-width:1200px) {
+            width: 45%;
+        }
     }
-    .button_yellow{
-        width: 90%;
-    }
-    .button_red{
-        width: 90%;
-    }
-    .button_orange{
-        width: 90%;
+
+    .button_yellow {
+        .button ();
+        background-color: rgba(207, 187, 6, 0.753);
+
+        @media (max-width:800px) {
+            width: @MediaWidth;
+        }
+        @media (max-width:1200px) {
+            width: @MediaWidth;
+        }
     }
 }
